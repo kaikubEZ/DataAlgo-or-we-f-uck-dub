@@ -35,9 +35,19 @@ public:
         insertAt(mRoot, x);
     }
     bool isSameBinaryTree(Tree& t) {
-        // Insert your code here
+        return CompareNode(this->mRoot, t.mRoot);
     }
-    // You can also put your code here
+
+    
+    bool CompareNode(Node* a, Node* b){
+        if(a==NULL&&b==NULL)return true;
+        else if(a!=NULL && b==NULL || a==NULL && b!= NULL) return false;
+        
+        if(a->data==b->data) {
+            return (CompareNode(a->left,b->left)&&CompareNode(a->right,b->right));
+        }
+        return false;
+    }
 
 protected:
     void insertAt(Node*& r, int x) {
