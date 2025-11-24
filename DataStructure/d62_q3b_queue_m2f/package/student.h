@@ -7,26 +7,20 @@
 template <typename T>
 void CP::queue<T>::move_to_front(size_t pos) {
     
-    T* arr = new T[mSize];
+    T* arr = new T[mSize]; //ประกาศarrayมาเก็บsizeใหม่
     size_t oldSize = mSize;
     for(size_t i = 0;i<pos;++i){
         arr[i+1] = front();
         pop();
     }
-
-    arr[0] = front();
-    pop();
-
+    arr[0] = front();pop();
     for(int i = pos+1;i<oldSize;++i){
         arr[i] = front();
         pop();
     }
-
     delete[] mData;
     mData = arr;
-    
-    mFront = 0;
-    
+    mFront = 0;//อย่าลืมกับfunctionใหม่
 }
 
 #endif
