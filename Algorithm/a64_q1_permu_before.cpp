@@ -22,8 +22,7 @@ void recur(int len){
           sol.pop_back();
           used[i] = false;
      }
-
-     
+  
 }
 
 int main(){
