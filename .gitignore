@@ -4,3 +4,6 @@
 
 .env
 .vscode/
+tasks.json
+launch.json
+settings.json
