@@ -22,7 +22,7 @@ int main(){
 
      int t; cin>>t;
      
-     fill(begin(parented), end(parented), -1);
+     
      while(t--){
           
           int n,e;cin>>n>>e;
