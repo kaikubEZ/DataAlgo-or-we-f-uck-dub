@@ -28,8 +28,8 @@ void recur(int len){
 int main(){
      ios::sync_with_stdio(0); cin.tie(0);
      cin>>n>>m;
-     
      fill(begin(excArr),end(excArr),-1);
+     
      while(m--){
           int a,b;cin>>a>>b;
           excArr[b] = a;
