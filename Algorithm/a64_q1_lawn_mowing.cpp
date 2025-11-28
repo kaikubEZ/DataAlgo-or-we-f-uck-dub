@@ -3,26 +3,24 @@
 using namespace std;
 
 
-int main(){
+int32_t main(){
      ios::sync_with_stdio(0);
      cin.tie(0);
      int n,m,k; cin>>n>>m>>k;
-     int arr[n];
-     for(int i = 0;i<n;++i){
-          int temp;cin>>temp;
-          arr[i] = temp;
+     vector<long long> arr(n+1);
+     arr[0]=0;
+     for(int i = 1;i<=n;++i){
+          cin>>arr[i];
+          arr[i]+=arr[i-1]+k;
+          
      }
 
      while(m--){
-          int a,b;cin>>a>>b;
-          int cost = k;
-          int index = a;
-          while(true){
-               if(cost > b) break;
-               cost += arr[index] + k;
-               index++;
-          }
+          long long a,b;cin>>a>>b;
+          auto it = upper_bound(arr.begin(),arr.end(),b+arr[a]);
+          if(it == arr.begin()+1) {cout<<"0\n"; continue;}
 
-          cout<<index--<<endl;
+          it--;
+          cout<<*it-arr[a]-((it-arr.begin()-a)*k)<<"\n";
      }
 }
