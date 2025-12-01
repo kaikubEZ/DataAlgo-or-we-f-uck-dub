@@ -1,8 +1,8 @@
-.exe
+*.exe
 
-.json
+*.json
 
-.env
+*.env
 .vscode/
 tasks.json
 launch.json
