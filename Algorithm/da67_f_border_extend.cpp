@@ -7,8 +7,9 @@ int main(){
 
      int r,c,k;
      cin>>r>>c>>k;
-     queue<tuple<int,int,int>> q;//timer
      vector<vector<int>> arr(r,vector<int> (c));
+     //border extend BFS
+     queue<tuple<int,int,int>> q;//timer
      for(int i = 0;i<r;++i){
           for(int j = 0;j<c;++j){
                int temp;

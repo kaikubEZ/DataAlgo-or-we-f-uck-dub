@@ -6,7 +6,7 @@ vector<vector<int>> adj;
 vector<bool> used;
 vector<int> dist;
 int ans = 0;
-bool BFS(int u,int p,int d){
+bool DFS(int u,int p,int d){
     if(used[u]){
         ans = d - dist[u];
         return true;
@@ -15,11 +15,11 @@ bool BFS(int u,int p,int d){
     dist[u] = d;
     for(auto v : adj[u]){
         if(v==p) continue;
-        if(BFS(v,u,d+1)) return true;;
+        if(DFS(v,u,d+1)) return true;;
     }
     return false;
 }
-
+//Find Cycle in Tree
 int main(){
     cin.tie(0)->sync_with_stdio(0);
 
@@ -33,7 +33,7 @@ int main(){
         adj[temp1].push_back(temp2);
         adj[temp2].push_back(temp1);
     }
-    BFS(0,-1,0);
+    DFS(0,-1,0);
 
     cout<<ans;
 }
